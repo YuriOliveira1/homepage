@@ -1,0 +1,12 @@
+body {
+    background-color: #0c1016;
+}
+
+.header {
+    background-color: aqua;
+    height: 60px;
+}
+
+.nav-link {
+    color: white;
+}
