@@ -134,11 +134,9 @@ img {
 
 .fa {
     padding: 20px;
-    font-size: 30px;
     width: 50px;
-    text-align: center;
     text-decoration: none;
-    margin: 5px 2px;
+    margin: 1px 8px;
     border-radius: 50%;
 }
 
@@ -160,4 +158,91 @@ img {
 
 .fa-linkedin:hover {
     background: #007bb5;
+}
+
+.section {
+    width: 1920px;
+    height: 1000px;
+}
+
+.container-projects {
+    margin-top: 40px;
+    max-width: 100%;
+    max-height: 100vh;
+    padding: 20px; 
+}
+
+.card {
+    width: 400px;
+    height: 480px;
+    margin: 150px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cards {
+    border-radius: 20px;
+    border: 2px solid greenyellow;
+    background-color: #0c1016;
+    color: wheat;
+}
+
+.card-img-top {
+    max-width: 70%;
+    max-height: 70%;
+    border-radius: 10px;
+}
+
+#donation {
+    margin-top: 15px;
+}
+
+#homepage {
+    margin-top: 3px;
+}
+
+#lua {
+    margin-top: 20px;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.btn {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-color: greenyellow;
+    color: greenyellow;
+    text-align: center;
+    width: 130px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    color: #0c1016;
+    background-color: wheat;
+    border-color: greenyellow
+}
+
+.text-projects {
+    position: relative;
+    top: 50px;
+    text-align: center;
+    color: wheat;
+    font-weight: bold;
+    font-size: 24px;
+    padding-left: 160px;
+    padding-right: 160px;
+}
+
+#link-blog {
+    text-decoration: underline;
+    text-decoration-color: greenyellow;
+    color: wheat;
+}
+
+#link-blog:hover {
+    color: greenyellow;
 }
