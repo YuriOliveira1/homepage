@@ -1,4 +1,4 @@
-package com.yuri.homepage;
+package com.yuri.homepage.resources;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
