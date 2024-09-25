@@ -21,4 +21,9 @@ public class HomeController {
     public String blog(Model model) {
         return "blog";
     }
+
+    @GetMapping("/postform")
+    public String postform(Model model) {
+        return "postform";
+    }
 }
