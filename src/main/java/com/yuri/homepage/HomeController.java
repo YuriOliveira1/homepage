@@ -16,4 +16,9 @@ public class HomeController {
     public String projects(Model model) {
         return "projects";
     }
+
+    @GetMapping("/blog")
+    public String blog(Model model) {
+        return "blog";
+    }
 }
