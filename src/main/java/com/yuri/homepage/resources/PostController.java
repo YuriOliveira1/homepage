@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +33,27 @@ public class PostController {
     public ResponseEntity<List<Post>> findAll() {
         List<Post> listPosts = service.findAll();
         return ResponseEntity.ok().body(listPosts);
+    }
+
+    @GetMapping("/posts/{id}")
+    public String getPost(@PathVariable Long id, Model model) {
+        Optional<Post> optionalPost = service.findById(id); // Busca o post pelo ID
+
+        if (optionalPost.isPresent()) {
+            Post post = optionalPost.get(); // Obtém o post do Optional
+            model.addAttribute("post", post);
+            return "post"; // Nome do template que exibe o post
+        } else {
+            // Se o post não for encontrado, você pode redirecionar para uma página de erro ou uma página inicial
+            return "redirect:/posts"; // Redireciona para a lista de posts
+        }
+    }
+
+    @GetMapping("/posts")
+    public String getPosts(Model model) {
+        List<Post> posts = service.findAll(); // Busca todos os posts, ordenados pela data de criação
+        model.addAttribute("posts", posts);
+        return "post-list"; // Nome do template que lista os posts
     }
 
     @PostMapping
@@ -74,4 +96,4 @@ public class PostController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
-}   
+}

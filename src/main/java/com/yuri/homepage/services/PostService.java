@@ -16,7 +16,7 @@ public class PostService {
     private PostRepository repository;
 
     public List<Post> findAll() {
-        return repository.findAll();
+        return repository.findAllByOrderByCreatedAtDesc(); // Chama o método do repositório
     }
 
     public Optional<Post> findById(Long id) {
