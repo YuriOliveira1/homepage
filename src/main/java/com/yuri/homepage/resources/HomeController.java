@@ -26,4 +26,9 @@ public class HomeController {
     public String postform(Model model) {
         return "postform";
     }
+
+    @GetMapping("/admin")
+    public String admin(Model model) {
+        return "admin";
+    }
 }

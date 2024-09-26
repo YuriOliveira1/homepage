@@ -170,6 +170,8 @@ img {
     max-width: 100%;
     max-height: 100vh;
     padding: 20px; 
+    position: relative;
+    left: 120px;
 }
 
 .card {
@@ -246,3 +248,33 @@ img {
 #link-blog:hover {
     color: greenyellow;
 }
+
+.section-table {
+    overflow: auto;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    padding-left: 250px;
+    position: relative;
+    top: 150px;
+    left: 650px;
+    overflow: auto
+  }
+
+.table-section {
+    width: 800px;  /* Largura fixa */
+    height: 300px; /* Altura fixa */
+    overflow: auto; /* Ativa rolagem automática quando necessário */
+    border: 1px solid #b41717; /* Bordas para visualização */
+    background-color: aliceblue;
+}
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+

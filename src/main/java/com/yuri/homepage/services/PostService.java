@@ -31,7 +31,7 @@ public class PostService {
         repository.deleteById(id);
     }
 
-    public void updatePost(Post post) {
+    public void updatePost(Post post) throws Exception {
         Optional<Post> existingPostOpt = repository.findById(post.getId());
         if (existingPostOpt.isPresent()) {
             Post existingPost = existingPostOpt.get();
@@ -39,10 +39,13 @@ public class PostService {
             // Atualiza todos os campos necessários
             existingPost.setTitle(post.getTitle());
             existingPost.setContent(post.getContent());
-            // existingPost.setSlug(post.getSlug());
-            // Você pode decidir se deseja atualizar `createdAt` ou mantê-lo como está
+            existingPost.setSlug(post.getSlug());
 
+            // Salva as alterações no banco de dados
             repository.save(existingPost);
+        } else {
+            // Lidar com o caso em que o post não foi encontrado
+            throw new Exception("Post com ID " + post.getId() + " não encontrado.");
         }
     }
 }
