@@ -1,12 +1,13 @@
 package com.yuri.homepage.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.yuri.homepage.entities.Post;
-
-import com.yuri.homepage.repositories.PostRepository;
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yuri.homepage.entities.Post;
+import com.yuri.homepage.repositories.PostRepository;
 
 @Service
 public class PostService {
@@ -31,13 +32,17 @@ public class PostService {
     }
 
     public void updatePost(Post post) {
-        Optional<Post> existingPost = repository.findById(post.getId());
-        if (existingPost.isPresent()) {
-            Post postOriginal = existingPost.get();
+        Optional<Post> existingPostOpt = repository.findById(post.getId());
+        if (existingPostOpt.isPresent()) {
+            Post existingPost = existingPostOpt.get();
 
-            postOriginal.setPost(post.getPost());
+            // Atualiza todos os campos necessários
+            existingPost.setTitle(post.getTitle());
+            existingPost.setContent(post.getContent());
+            // existingPost.setSlug(post.getSlug());
+            // Você pode decidir se deseja atualizar `createdAt` ou mantê-lo como está
 
-            repository.save(postOriginal);
-        } 
+            repository.save(existingPost);
+        }
     }
 }

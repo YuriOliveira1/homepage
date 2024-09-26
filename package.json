@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/YuriOliveira1/homepage/issues"
   },
-  "homepage": "https://github.com/YuriOliveira1/homepage#readme",
-  "dependencies": {
-    "quill": "^2.0.2"
-  }
+  "homepage": "https://github.com/YuriOliveira1/homepage#readme"
 }
